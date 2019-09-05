@@ -1,0 +1,10 @@
+easydict
+pandas
+python-dateutil
+pyyaml
+scipy
+tensorboardX
+tensorboard-pytorch
+torch
+torchfile
+torchvision
