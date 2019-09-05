@@ -200,7 +200,7 @@ def save_img_results(imgs_tcpu, fake_imgs, num_imgs,
         real_img, '%s/real_samples.png' % (image_dir),
         normalize=True)
     real_img_set = vutils.make_grid(real_img).numpy()
-    real_img_set = np.transpose(real_img_set, (1, 2, 0))
+    real_img_set = np.transpose(real_img_set, (0, 1, 2))
     real_img_set = real_img_set * 255
     real_img_set = real_img_set.astype(np.uint8)
     sup_real_img = summary.image('real_img', real_img_set)
@@ -216,7 +216,7 @@ def save_img_results(imgs_tcpu, fake_imgs, num_imgs,
 
         fake_img_set = vutils.make_grid(fake_img.data).cpu().numpy()
 
-        fake_img_set = np.transpose(fake_img_set, (1, 2, 0))
+        fake_img_set = np.transpose(fake_img_set, (0, 1, 2))
         fake_img_set = (fake_img_set + 1) * 255 / 2
         fake_img_set = fake_img_set.astype(np.uint8)
 
